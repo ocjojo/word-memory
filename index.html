@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WordMemory</title>
+		<link rel="icon" href="./icon/icon48.png" type="image/png">
+		<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+		<style>
+			body{
+				font-family: Boogaloo;
+				font-size: 26px;
+			}
+			#start {
+				text-align: center;
+			}
+			#game {
+				display: -webkit-flex;
+				-webkit-flex-direction: row;
+				-webkit-flex-flow: row wrap;
+				-webkit-justify-content: center;
+			}
+			.tile {
+				position: relative;
+				margin: 2px;
+				width: 200px;
+				height: 100px;
+				border-radius: 3px;
+				background-color: lightgray;
+				font-size: 36px;
+				overflow: hidden;
+				color: #6c6c6c;
+			}
+			.tile > div {
+				color: black;
+				position:absolute;
+				top: 0px;
+				left: 0px;
+				background-color: RoyalBlue;
+				width: 100%;
+				height: 100%;
+				display: -webkit-box;
+				-webkit-box-align: center;
+				-webkit-box-pack: center;
+			}
+			.out > div {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,255,0,0.5);
+			}
+			p {
+				cursor: pointer;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div id="start">
+			<img src="logo.png" />
+			<p>Klicke hier und wähle die Wortdatei aus.</p>
+		</div>
+		<input id="file" type="file">
+	</body>
+</html>
