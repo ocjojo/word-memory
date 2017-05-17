@@ -53,6 +53,32 @@
 			p {
 				cursor: pointer;
 			}
+
+			#readme-container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 15px;
+				cursor: pointer;
+			}
+
+			#readme-container .content{
+				position: relative;
+				background: #fff;
+				padding: 10px;
+
+				display: none;
+				font-family: Open Sans, sans-serif;
+				font-size: 14px;
+
+				-webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+				box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+			}
+
+			#readme-container .content code {
+				background: #ffaa09;
+			}
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="script.js"></script>
@@ -63,6 +89,9 @@
 			<p>Klicke hier und wähle die Wortdatei aus.</p>
 		</div>
 		<input id="file" type="file">
+		<div id="readme-container">
+			Readme
+			<div class="content">Lädt ...</div>
+		</div>
 	</body>
-	<!-- by Lukas Ehnle -->
 </html>

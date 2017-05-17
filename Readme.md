@@ -1,6 +1,6 @@
 # WordMemory
 
-Erstelle ein Wort-Memory aus einer Text Datei mit Worten
+Erstelle ein Wort-Memory aus einer Text Datei.
 
 ## How to
 

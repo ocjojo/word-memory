@@ -11,7 +11,7 @@ $(document).ready(function(){
             reader.onload = function(e) {
                 words = e.target.result.split("\n");
                 new Game();
-            }
+            };
             //read the text file
             reader.readAsText(file[0]);
         }
@@ -19,6 +19,20 @@ $(document).ready(function(){
     //add click handler to description that triggers the input
     $("p").click(function(e){
        $("#file").click(); 
+    });
+
+    var readmeLoaded = false;
+    $('#readme-container').click(function(){
+        if($('#readme-container .content').toggle().is(':hidden') || readmeLoaded) return;
+
+        $.ajax('https://api.github.com/repos/ocjojo/word-memory/readme', {
+            headers: {          
+                Accept: "application/vnd.github.VERSION.html" 
+            }
+        }).then(function(html){
+            $('#readme-container .content').html(html);
+            readmeLoaded = true;
+        });
     });
 });
 
@@ -93,12 +107,12 @@ var Game = function() {
         if(typeof word !== "undefined") {
             var w = word.split(";");
             for(var i = 0; i < 2; i++) {
-                 var tile = $('<div class="tile" id="' + (id + i * wordPairs) + '"></div>');
-                $('<div>' + w[i] + '</div>').appendTo(tile).hide();
-                tiles.push(tile);
+                 var newTile = $('<div class="tile" id="' + (id + i * wordPairs) + '"></div>');
+                $('<div>' + w[i] + '</div>').appendTo(newTile).hide();
+                tiles.push(newTile);
             }
         } else {
             return $("#" + id + " > div");
         }
     }
-}
+};
